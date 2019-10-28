@@ -20,20 +20,20 @@ jobs:
       install: mvn test-compile -DskipTests=true -Dgpg.skip=true -B -V
       script: mvn test -Pquickrun -Dcheckstyle.skip=true -Dgpg.skip=true -B -V
     # verify
-    - stage: "slow verify site"
+    - stage: "slow verify"
       install: mvn test-compile -DskipTests=true -Dgpg.skip=true -B -V
-      script: mvn verify site -B -V
+      script: mvn verify -B -V
     - stage: "examples projects all"
       install: mvn test-compile package -Pquickrun,all -Dcheckstyle.skip=true -DskipTests=true -Dgpg.skip=true -B -V
-      script: mvn verify -Pquickrun,all site -B -V
+      script: mvn verify -Pquickrun,all -B -V
     - stage: "java11 build verify"
       if: "branch =~ ^java11.*"
       jdk: openjdk11
       install: mvn test-compile -DskipTests=true -Dgpg.skip=true -B -V
-      script: mvn verify site -B -V
+      script: mvn verify -B -V
     - stage: "java11 examples projects all"
       if: "branch =~ ^java11.*"
       jdk: openjdk11
       install: mvn test-compile package -Pquickrun,all -Dcheckstyle.skip=true -DskipTests=true -Dgpg.skip=true -B -V
-      script: mvn verify -Pquickrun,all site -B -V
+      script: mvn verify -Pquickrun,all -B -V
 
