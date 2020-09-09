@@ -70,7 +70,7 @@
                 <phase>clean</phase>
                 <configuration>
                   <target>
-                    <delete file="${project.basedir}/../build/build.properties" />
+                    <delete file="${project.basedir}/../build/build.properties"/>
                   </target>
                 </configuration>
                 <goals>
@@ -104,7 +104,7 @@
       <dependency>
          <groupId>org.hibernate</groupId>
          <artifactId>hibernate-tools</artifactId>
-         <version>5.0.6.Final</version>
+         <version>5.3.18.Final</version>
          <scope>runtime</scope>
       </dependency>
       
