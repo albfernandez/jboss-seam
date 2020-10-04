@@ -48,7 +48,7 @@
 		<version.mvel2>2.1.9.Final</version.mvel2> <!-- needed for drools 5.3.3 (do not use 2.2) -->
 		<version.janino>2.5.15</version.janino> <!--  Needed for drools 5.3.3 which is needed for seam2 -->
 		<version.resteasy>3.0.19.Final</version.resteasy>
-		<version.spring>3.1.4.RELEASE</version.spring>
+		<version.spring>5.2.9.RELEASE</version.spring>
         <version.richfaces>4.6.13.ayg</version.richfaces>
         <version.richfaces.cdk>4.6.1.ayg</version.richfaces.cdk>
 		<version.org.jboss.spec.javax.faces>2.2.13</version.org.jboss.spec.javax.faces>
