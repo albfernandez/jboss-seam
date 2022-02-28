@@ -71,7 +71,7 @@
 		<version.org.jboss.spec.javax.faces>2.2.13</version.org.jboss.spec.javax.faces>
 
 		<!-- Version of Hibernate projects -->
-		<version.org.hibernate>5.3.25.Final</version.org.hibernate>
+		<version.org.hibernate>5.4.24.Final</version.org.hibernate>
 		<version.org.hibernate.validator>5.2.5.Final</version.org.hibernate.validator>
 		<version.org.hibernate.search>5.5.7.Final</version.org.hibernate.search>
 		<version.org.hibernate.javax.persistence>1.0.1.Final</version.org.hibernate.javax.persistence>
