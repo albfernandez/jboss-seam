@@ -58,7 +58,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		
 		<!-- Version string properties for integrations -->
-		<version.seam>2.3.27-SNAPSHOT</version.seam>
+		<version.seam>3.2.26.ayg</version.seam>
 		<version.wicket>1.4.14</version.wicket>
 		<version.drools>5.3.3.Final</version.drools><!-- Needed for Seam2 compatibility -->
 		<version.mvel2>2.1.9.Final</version.mvel2> <!-- needed for drools 5.3.3 (do not use 2.2) -->
