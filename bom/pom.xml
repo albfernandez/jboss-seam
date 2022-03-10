@@ -68,7 +68,7 @@
 		<version.richfaces>4.6.17.ayg</version.richfaces>
 		<version.richfaces.cdk>4.6.1.ayg</version.richfaces.cdk>
 		<version.jbpm.jpdl>3.2.17.ayg</version.jbpm.jpdl>
-		<version.org.jboss.spec.javax.faces>2.2.13</version.org.jboss.spec.javax.faces>
+		<version.org.jboss.spec.javax.faces>2.2.14</version.org.jboss.spec.javax.faces>
 
 		<!-- Version of Hibernate projects -->
 		<version.org.hibernate>5.4.33.Final</version.org.hibernate>
