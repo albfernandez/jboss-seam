@@ -60,7 +60,7 @@
 		<!-- Version string properties for integrations -->
 		<version.seam>2.3.28-SNAPSHOT</version.seam>
 		<version.wicket>1.4.23</version.wicket>
-		<version.drools>5.3.3.Final</version.drools><!-- Needed for Seam2 compatibility -->
+		<version.drools>7.59.0.Final-redhat-00006</version.drools><!-- Needed for Seam2 compatibility -->
 		<version.mvel2>2.4.14.Final</version.mvel2> <!-- needed for drools 5.3.3 (do not use 2.2) -->
 		<version.janino>2.5.15</version.janino> <!-- Needed for drools 5.3.3 which is needed for seam2 -->
 		<version.resteasy>3.15.3.Final</version.resteasy>
