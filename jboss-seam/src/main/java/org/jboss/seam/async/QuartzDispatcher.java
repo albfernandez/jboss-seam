@@ -144,7 +144,7 @@ public class QuartzDispatcher extends AbstractDispatcher<QuartzTriggerHandle, Sc
 			
 			Trigger trigger = TriggerBuilder.newTrigger().withIdentity(triggerName)
 					.withSchedule(CronScheduleBuilder.cronSchedule(cronSchedule.getCron()))
-					.endAt(cronSchedule.getExpiration())
+					.endAt(cronSchedule.getFinalExpiration())
 					.startAt(startTime)
 					.build();
 			
