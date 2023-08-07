@@ -80,7 +80,7 @@
 		<dependency>
 			<groupId>com.github.albfernandez</groupId>
 			<artifactId>jbpm-jpdl</artifactId>
-			<version>3.2.18.ayg</version>
+			<version>3.2.19.ayg</version>
 			<exclusions>
 				<exclusion>
 					<groupId>org.hibernate</groupId>

@@ -67,7 +67,7 @@
 		<version.spring>5.3.27</version.spring>
 		<version.richfaces>4.6.20.ayg</version.richfaces>
 		<version.richfaces.cdk>4.6.1.ayg</version.richfaces.cdk>
-		<version.jbpm.jpdl>3.2.18.ayg</version.jbpm.jpdl>
+		<version.jbpm.jpdl>3.2.19.ayg</version.jbpm.jpdl>
 		<version.org.jboss.spec.javax.faces>2.2.14</version.org.jboss.spec.javax.faces>
 
 		<!-- Version of Hibernate projects -->

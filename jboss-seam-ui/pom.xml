@@ -186,7 +186,7 @@
 	<dependency>
 		<groupId>com.github.albfernandez</groupId>
 		<artifactId>jbpm-jpdl</artifactId>
-		<version>3.2.17.ayg</version>
+		<version>3.2.19.ayg</version>
 		<optional>true</optional>
 		<exclusions>
 			<exclusion>
