@@ -57,7 +57,7 @@
 			<plugin>
 				<groupId>org.jboss.maven.plugins</groupId>
 				<artifactId>maven-jdocbook-plugin</artifactId>
-				<version>2.2.0</version>
+				<version>2.3.10</version>
 				<extensions>true</extensions>
 				<executions>
 					<execution>
@@ -122,7 +122,7 @@
 				<configuration>
 					<sourceDirectory>${project.build.outputDirectory}</sourceDirectory>
 					<sourceDocumentName>master.xml</sourceDocumentName>
-					<masterTranslation>en-US</masterTranslation>
+					<masterTranslation>en-US</masterTranslation>					
 
 					<imageResource>
 						<directory>${project.basedir}/src/docbook/en-US</directory>
