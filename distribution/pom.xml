@@ -127,8 +127,6 @@
 			<artifactId>jboss-seam-wicket</artifactId>
 		</dependency>
 
-		
-
 		<dependency>
 			<groupId>com.github.albfernandez.seam</groupId>
 			<artifactId>jboss-seam-debug</artifactId>
