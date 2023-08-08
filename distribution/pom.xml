@@ -127,11 +127,7 @@
 			<artifactId>jboss-seam-wicket</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>com.github.albfernandez.seam</groupId>
-			<artifactId>seam-reference-guide</artifactId>
-			<version>${project.version}</version>
-		</dependency>
+		
 
 		<dependency>
 			<groupId>com.github.albfernandez.seam</groupId>

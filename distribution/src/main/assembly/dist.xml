@@ -171,23 +171,6 @@
          </includes>
       </dependencySet>
       
-      <!-- Pull in docbook artifacts -->
-      <dependencySet>
-         <outputDirectory>doc/reference/</outputDirectory>
-         <unpack>true</unpack>
-         <useProjectArtifact>false</useProjectArtifact>
-         <includes>
-            <include>com.github.albfernandez.seam:seam-reference-guide</include>
-         </includes>
-         <unpackOptions>
-            <excludes>
-               <exclude>META-INF/</exclude>
-            </excludes>
-         </unpackOptions>
-         <directoryMode>755</directoryMode>
-         <fileMode>755</fileMode>
-         <outputFileNameMapping>${artifact.artifactId}-${artifact.version}${dashClassifier?}.${artifact.extension}</outputFileNameMapping>
-      </dependencySet>
       
       <!-- Add necessary javadoc jars -->
       <dependencySet>
