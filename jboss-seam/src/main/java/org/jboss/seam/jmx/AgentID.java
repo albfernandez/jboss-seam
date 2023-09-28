@@ -5,6 +5,7 @@ import java.security.AccessController;
 import java.security.PrivilegedActionException;
 import java.security.PrivilegedExceptionAction;
 import java.security.SecureRandom;
+import java.util.concurrent.atomic.AtomicLong;
 
 import javax.management.MBeanServer;
 import javax.management.ObjectName;
@@ -25,8 +26,7 @@ import org.jboss.mx.server.ServerConstants;
  */
 public class AgentID implements ServerConstants {
 	// Static ----------------------------------------------------
-	private static long id = 0L;
-	private static Object lock = new Object();
+	private static AtomicLong id = new AtomicLong(0L);
 
 	private static final SecureRandom rand = new SecureRandom();
 
@@ -44,15 +44,9 @@ public class AgentID implements ServerConstants {
 		// MBeanServerID is unique across multiple JVMs, even on the same host
 		String vmid = new java.rmi.dgc.VMID().toString().replace(':', 'x').replace('-', 'X') + rand.nextInt(100);
 
-		return ipAddress + "/" + System.currentTimeMillis() + "/" + vmid + "/" + incrementId();
+		return ipAddress + "/" + System.currentTimeMillis() + "/" + vmid + "/" + id.incrementAndGet();
 	}
 
-	private static long incrementId() {
-		synchronized(lock) {
-			return ++id;
-		}
-	}
-	
 	private static String getIP() {
 		try {
 			return AccessController.doPrivileged(new PrivilegedExceptionAction<String>() {
