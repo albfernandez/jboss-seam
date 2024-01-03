@@ -261,7 +261,7 @@ Release Notes - Seam 2 - Version 2.3.4.ayg 2016-03-23
     * [   ] Don't scan for annotations if we have no annotations to search for
     * [   ] Log startup times
     * [   ] Fix posible concurrency issues on UserTokens.java
-    * [   ] Escape xml data before putting it in a stream (MarshalUtils.java)
+    * [   ] Escape xml data before putting it in a stream (MarshalUtils.java) (Fixes CVE-2014-0149)
     * [   ] Seam pdf now generates full compressed PDF version 1.7 
 
 
