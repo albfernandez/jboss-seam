@@ -131,7 +131,6 @@ Building and Checking Dist
     jboss-seam
     jboss-seam-debug
     jboss-seam-excel
-    jboss-seam-flex
     jboss-seam-gen
     jboss-seam-ioc
     jboss-seam-mail
