@@ -947,26 +947,6 @@
 				<version>2.2</version>
 			</dependency>
 
-			<dependency>
-				<groupId>org.apache.flex.blazeds</groupId>
-				<artifactId>flex-messaging-common</artifactId>
-				<version>4.7.3</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.flex.blazeds</groupId>
-				<artifactId>flex-messaging-core</artifactId>
-				<version>4.7.3</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.flex.blazeds</groupId>
-				<artifactId>flex-messaging-proxy</artifactId>
-				<version>4.7.3</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.flex.blazeds</groupId>
-				<artifactId>flex-messaging-remoting</artifactId>
-				<version>4.7.3</version>
-			</dependency>
 
 			<dependency>
 				<groupId>com.github.librepdf</groupId>

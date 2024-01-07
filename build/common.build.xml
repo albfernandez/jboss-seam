@@ -79,7 +79,6 @@
         <copyDependencies id="ioc" pom="${ioc.pom}" todir="${lib.dir}" scope="runtime" />
         <copyDependencies id="mail" pom="${mail.pom}" todir="${lib.dir}" scope="runtime" />
         <copyDependencies id="pdf" pom="${pdf.pom}" todir="${lib.dir}" scope="runtime" />
-        <copyDependencies id="flex" pom="${flex.pom}" todir="${lib.dir}" scope="runtime" />
         <copyDependencies id="excel" pom="${excel.pom}" todir="${lib.dir}" scope="runtime" />
         <copyDependencies id="remoting" pom="${remoting.pom}" todir="${lib.dir}" scope="runtime" />
         <copyDependencies id="resteasy" pom="${resteasy.pom}" todir="${lib.dir}" scope="runtime" />
@@ -91,7 +90,6 @@
         <copyDependencies id="ioc" pom="${ioc.pom}" todir="${lib.dir}" scope="compile" />
         <copyDependencies id="mail" pom="${mail.pom}" todir="${lib.dir}" scope="compile" />
         <copyDependencies id="pdf" pom="${pdf.pom}" todir="${lib.dir}" scope="compile" />
-        <copyDependencies id="flex" pom="${flex.pom}" todir="${lib.dir}" scope="compile" />
         <copyDependencies id="excel" pom="${excel.pom}" todir="${lib.dir}" scope="compile" />
         <copyDependencies id="rss" pom="${rss.pom}" todir="${lib.dir}" scope="compile" />
         <copyDependencies id="remoting" pom="${remoting.pom}" todir="${lib.dir}" scope="compile" />
@@ -109,7 +107,6 @@
             <dependency groupId="org.jboss.seam" artifactId="jboss-seam-ioc" version="${complete.version}" />
             <dependency groupId="org.jboss.seam" artifactId="jboss-seam-mail" version="${complete.version}" />
             <dependency groupId="org.jboss.seam" artifactId="jboss-seam-pdf" version="${complete.version}" />
-            <dependency groupId="org.jboss.seam" artifactId="jboss-seam-flex" version="${complete.version}" />
             <dependency groupId="org.jboss.seam" artifactId="jboss-seam-remoting" version="${complete.version}" />
             <dependency groupId="org.jboss.seam" artifactId="jboss-seam-resteasy" version="${complete.version}" />
             <dependency groupId="org.jboss.seam" artifactId="jboss-seam-ui" version="${complete.version}" />
