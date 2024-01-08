@@ -20,8 +20,8 @@ JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/ mvn clean package install verify -
 mvn clean package install -Pdistribution,examples
 mvn -pl '!functional-tests,!seam-integration-tests' clean package install deploy
 git add -A
-git commit -S -m 'Release <2.3.12>'
-git tag -a <2.3.12> -m "Tagging release <2.3.12>"
+git commit -S -m 'Release <2.3.28.ayg>'
+git tag -a <2.3.28.ayg> -m "Tagging release <2.3.28.ayg>"
 git push
 git push --tags
 ```

@@ -6,7 +6,7 @@
 	<groupId>com.github.albfernandez.seam</groupId>
 	<artifactId>bom</artifactId>
 	<name>Seam 2 Bill Of Materials </name>
-	<version>2.3.28-SNAPSHOT</version>
+	<version>2.3.28.ayg</version>
 	<packaging>pom</packaging>
 
 	<licenses>
@@ -58,7 +58,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		
 		<!-- Version string properties for integrations -->
-		<version.seam>2.3.28-SNAPSHOT</version.seam>
+		<version.seam>2.3.28.ayg</version.seam>
 		<version.wicket>1.4.23</version.wicket>
 		<version.drools>5.3.3.Final</version.drools><!-- Needed for Seam2 compatibility -->
 		<version.mvel2>2.4.14.Final</version.mvel2> <!-- needed for drools 5.3.3 (do not use 2.2) -->

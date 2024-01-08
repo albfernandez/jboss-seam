@@ -126,7 +126,7 @@
             <dependency groupId="org.jboss.seam.embedded" artifactId="hibernate-all" version="${embedded.version}" />
             
             <remoteRepository refId="repository.jboss.org" />
-            <remoteRepository id="snapshots.jboss.org" url="http://snapshots.jboss.org/maven2" />
+            <remoteRepository id="snapshots.jboss.org" url="https://snapshots.jboss.org/maven2" />
         </copyInlineDependencies>
         <property name="copyjbossembeddeddone" value="true" />
     </target>
