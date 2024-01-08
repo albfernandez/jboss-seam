@@ -11,6 +11,7 @@
     <target name="copyarq">
         <mkdir dir="${test.lib.dir}" />
         <aether:resolve>
+        	<aether:remoterepo id="central" url="https://repo1.maven.org/maven2/" type="default" releases="true" snapshots="false" updates="always" checksums="fail"/>
             <aether:dependencies>
                 <aether:dependency groupid="org.jboss.shrinkwrap.resolver"
                     artifactid="shrinkwrap-resolver-depchain" type="pom"
