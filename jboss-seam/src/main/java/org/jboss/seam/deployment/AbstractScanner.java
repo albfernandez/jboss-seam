@@ -50,7 +50,7 @@ public abstract class AbstractScanner implements Scanner {
 		private String name;
 		private ServletContext servletContext;
 		private OmitPackageHelper omitPackage;
-		private ScanResultsCache scanCache;
+		protected ScanResultsCache scanCache;
 
 		public Handler(String name, Set<Entry<String, DeploymentHandler>> deploymentHandlers, ClassLoader classLoader,
 				ServletContext servletContext) {
@@ -179,18 +179,26 @@ public abstract class AbstractScanner implements Scanner {
 			throw new NullPointerException("name cannot be null");
 		}
 		InputStream stream = null;
-		DataInputStream dstream = null;
 		try {
 			stream = classLoader.getResourceAsStream(name);
 			if (stream == null) {
 				throw new IllegalStateException(
 						"Cannot load " + name + " from " + classLoader + " (using getResourceAsStream() returned null)");
 			}
-			dstream = new DataInputStream(new BufferedInputStream(stream));
-
-			return new ClassFile(dstream);
+			return loadClassFile(stream);
 		} finally {
-			Resources.close(dstream, stream);
+			Resources.close(stream);
+		}
+	}
+	
+	protected static ClassFile loadClassFile(InputStream stream) throws IOException {
+		DataInputStream dstream = null;
+		try {
+			dstream = new DataInputStream(new BufferedInputStream(stream));
+			return new ClassFile(dstream);
+		}
+		finally {
+			Resources.close(dstream);
 		}
 	}
 
@@ -209,8 +217,12 @@ public abstract class AbstractScanner implements Scanner {
 	}
 
 	protected boolean handle(String name) {
+		return handle(name, null);
+	}
+	
+	protected boolean handle(String name, ClassFile classFile) {
 		if (!timestampScan) {
-			return defaultHandle(name);
+			return defaultHandle(name, classFile);
 		}
 		return timestampHandle(name);
 
@@ -234,11 +246,13 @@ public abstract class AbstractScanner implements Scanner {
 		return false;
 	}
 
-	private boolean defaultHandle(String name) {
+	private boolean defaultHandle(String name, ClassFile classFile) {
 		boolean handled = false;
 		if (!this.scanCache.isMiss(name)) {
-			handled = new Handler(name, deploymentStrategy.getDeploymentHandlers().entrySet(), deploymentStrategy.getClassLoader(),
-					servletContext).handle();
+			Handler handler = new Handler(name, deploymentStrategy.getDeploymentHandlers().entrySet(), deploymentStrategy.getClassLoader(),
+					servletContext);
+			handler.classFile = classFile;
+			handled = handler.handle();
 			if (handled) {
 				this.scanCache.addHit(name);
 			} else {

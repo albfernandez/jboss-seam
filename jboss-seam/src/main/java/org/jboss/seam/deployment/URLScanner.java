@@ -1,11 +1,13 @@
 package org.jboss.seam.deployment;
 
+import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.Set;
@@ -16,6 +18,8 @@ import java.util.zip.ZipFile;
 import org.jboss.seam.log.LogProvider;
 import org.jboss.seam.log.Logging;
 import org.jboss.seam.util.Resources;
+
+import javassist.bytecode.ClassFile;
 
 /**
  * Implementation of {@link Scanner} which can scan a {@link URLClassLoader}
@@ -135,7 +139,18 @@ public class URLScanner extends AbstractScanner {
 				ZipEntry entry = entries.nextElement();
 				String name = entry.getName();
 				if (omitPackage.acceptClass(name)) {
-					handle(name);
+					ClassFile classFile = null;
+					if (name.endsWith(".class") && !this.scanCache.isHit(name)) {
+						java.io.InputStream inputStream = null;
+						try {
+							inputStream = zip.getInputStream(entry);
+							classFile = loadClassFile(inputStream);
+						}
+						finally {
+							Resources.close(inputStream);
+						}
+					}
+					handle(name, classFile);
 				}
 			}
 
@@ -174,7 +189,21 @@ public class URLScanner extends AbstractScanner {
 					handleDirectory(child, newPath, excludedDirectories);
 				}
 			} else {
-				if (handle(newPath)) {
+				ClassFile classFile = null;
+				if (newPath.endsWith(".class") && !this.scanCache.isHit(newPath)) {
+					java.io.InputStream inputStream = null;
+					try {
+						inputStream = new BufferedInputStream(Files.newInputStream(child.toPath()));
+						classFile = loadClassFile(inputStream);
+					}
+					catch (IOException ioe) {
+						classFile = null;
+					}
+					finally {
+						Resources.close(inputStream);
+					}
+				}
+				if (handle(newPath, classFile)) {
 					// only try to update the timestamp on this scanner if the file was actually handled
 					touchTimestamp(child);
 				}

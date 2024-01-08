@@ -10,7 +10,9 @@ import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
 import java.util.StringTokenizer;
+import java.util.stream.Collectors;
 
 /**
  * @author <a href="mailto:theute@jboss.org">Thomas Heute</a>
@@ -40,6 +42,10 @@ public class Strings {
 			}
 		}
 		return true;
+	}
+	
+	public static boolean isNotEmpty(String string) {
+		return !isEmpty(string);
 	}
 
 	public static String nullIfEmpty(String string) {
@@ -77,6 +83,23 @@ public class Strings {
 			result[i++] = tokens.nextToken();
 		}
 		return result;
+	}
+	
+	
+	public static String[] splitTrimAndRemoveEmpty(String strings, String delims) {
+		String[] result = split(strings, delims);		
+		return Arrays.asList(result).stream()
+			.map(Strings::trim)
+			.filter(Strings::isNotEmpty)
+			.collect(Collectors.toList())
+			.toArray(new String[0]);
+	}
+	
+	public static String trim(String s) {
+		if (s == null) {
+			return "";
+		}
+		return s.trim();
 	}
 
 	public static String toString(Object... objects) {
