@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.albfernandez.seam.examples</groupId>
     <artifactId>seamdiscs</artifactId>
-    <version>2.3.28.ayg</version>
+    <version>2.3.29-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Seamdiscs Example</name>
     

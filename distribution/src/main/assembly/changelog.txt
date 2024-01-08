@@ -1,6 +1,10 @@
 JBoss Seam Changelog
 ====================
 
+Relase Notes - Seam 2 - Unreleased
+
+
+
 
 Release Notes - Seam 2 - Version 2.3.28.ayg 2023-01-08 
 

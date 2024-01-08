@@ -27,6 +27,12 @@ git push --tags
 ```
 
 
+## Create release and upload artifacts to Github
+
+Manually creating the release in Github project page, and upload generated artifacts.
+
+
+
 ## Prepare next iteration
 
 ```bash
@@ -35,7 +41,3 @@ git add -A
 git commit -S -m 'Next release cycle'
 git push
 ```
-
-## Create release and upload artifacts to Github
-
-Manually creating the release in Github project page, and upload generated artifacts.
