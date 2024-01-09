@@ -137,6 +137,9 @@ public class URLScanner extends AbstractScanner {
 			Enumeration<? extends ZipEntry> entries = zip.entries();
 			while (entries.hasMoreElements()) {
 				ZipEntry entry = entries.nextElement();
+				if (entry.isDirectory()) {
+					continue;
+				}
 				String name = entry.getName();
 				if (omitPackage.acceptClass(name)) {
 					ClassFile classFile = null;
@@ -188,7 +191,7 @@ public class URLScanner extends AbstractScanner {
 				if (omitPackage.acceptPackage(newPath)) {
 					handleDirectory(child, newPath, excludedDirectories);
 				}
-			} else {
+			} else if (omitPackage.acceptClass(newPath)) {
 				ClassFile classFile = null;
 				if (newPath.endsWith(".class") && !this.scanCache.isHit(newPath)) {
 					java.io.InputStream inputStream = null;
