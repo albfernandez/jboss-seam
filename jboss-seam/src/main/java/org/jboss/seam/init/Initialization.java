@@ -1061,10 +1061,17 @@ public class Initialization {
 			}
 		}
 
-		for (EventListenerDescriptor listenerDescriptor : this.eventListenerDescriptors.values()) {
-			for (String expression : listenerDescriptor.getListenerMethodBindings()) {
-				init.addObserverMethodExpression(listenerDescriptor.getType(), Expressions.instance().createMethodExpression(expression));
+		Expressions expressions = Expressions.instance();		
+		if (expressions != null) {
+			for (EventListenerDescriptor listenerDescriptor : this.eventListenerDescriptors.values()) {
+				for (String expression : listenerDescriptor.getListenerMethodBindings()) {
+					init.addObserverMethodExpression(listenerDescriptor.getType(), expressions.createMethodExpression(expression));
+				}
 			}
+		}
+		else {
+			log.error("No expressions installed, Expressions.instance() is null");
+			throw new RuntimeException("No expressions installed, Expressions.instance() resolves to null");
 		}
 		long finishTimeNano = System.nanoTime();
 		if (log.isInfoEnabled()) {
