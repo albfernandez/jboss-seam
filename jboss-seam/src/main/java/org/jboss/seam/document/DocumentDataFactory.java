@@ -36,7 +36,7 @@ public final class DocumentDataFactory {
 		if (tempDir == null) {
 			return null;
 		}
-		File tempFile = new File(tempDir, "seam-docstore-" + UUID.randomUUID().toString());		
+		File tempFile = new File(tempDir, "seam-docstore-" + UUID.randomUUID().toString());
 		
 		try {
 			Files.write(tempFile.toPath(), data, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);

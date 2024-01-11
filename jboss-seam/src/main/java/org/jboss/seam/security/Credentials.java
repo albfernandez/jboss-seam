@@ -60,7 +60,10 @@ public class Credentials implements Serializable {
 	}
 
 	public void setUsername(String username) {
-		if (this.username != username && (this.username == null || !this.username.equals(username))) {
+		if (this.username == null && username == null) {
+			return;
+		}
+		if (this.username == null || !this.username.equals(username)) {
 			this.username = username;
 			invalid = false;
 			if (Events.exists()) {
@@ -74,7 +77,10 @@ public class Credentials implements Serializable {
 	}
 
 	public void setPassword(String password) {
-		if (this.password != password && (this.password == null || !this.password.equals(password))) {
+		if (this.password == null && password == null) {
+			return;
+		}
+		if (this.password == null || !this.password.equals(password)) {
 			this.password = password;
 			invalid = false;
 			if (Events.exists()) {

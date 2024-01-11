@@ -56,7 +56,7 @@ public class ThemeSelector extends Selector {
 	@Create
 	public void initDefaultTheme() {
 		String themeName = getCookieValueIfEnabled();
-		if (themeName != null && Arrays.asList(availableThemes).contains(themeName)) {
+		if (themeName != null && availableThemes != null && Arrays.asList(availableThemes).contains(themeName)) {
 			setTheme(themeName);
 		}
 
@@ -125,8 +125,12 @@ public class ThemeSelector extends Selector {
 	}
 
 	public void setAvailableThemes(String[] themeNames) {
-		setDirty(this.availableThemes, themeNames);
-		this.availableThemes = themeNames;
+		if (themeNames == null) {
+			throw new IllegalArgumentException("Theme names cannot be null");
+		}
+		String[] copy = Arrays.copyOf(themeNames, themeNames.length);
+		setDirty(this.availableThemes, copy);
+		this.availableThemes = copy;
 	}
 
 	/**
@@ -178,7 +182,10 @@ public class ThemeSelector extends Selector {
 	}
 
 	public String[] getAvailableThemes() {
-		return availableThemes;
+		if (this.availableThemes == null) {
+			return null;
+		}
+		return Arrays.copyOf(this.availableThemes, this.availableThemes.length);
 	}
 
 }
