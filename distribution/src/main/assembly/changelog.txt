@@ -6,7 +6,7 @@ Release Notes - Seam 2 - Unreleased
 
 Relase Notes - Seam 2 - Version 2.3.29.ayg 2023-01-15
 
-    * [   ] Release to maven after failing to release 2.3.28.ayg
+   * [   ] Optimize startup time skipping some unnecessary reads
 
 
 
