@@ -3,7 +3,7 @@
 
     <groupId>com.github.albfernandez.seam</groupId>
     <artifactId>examples</artifactId>
-    <version>2.3.29-SNAPSHOT</version>
+    <version>2.3.29.ayg</version>
     <packaging>pom</packaging>
 
     <name>Seam 2 EE 6 examples</name>

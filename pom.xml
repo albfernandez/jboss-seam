@@ -5,7 +5,7 @@
 	<groupId>com.github.albfernandez.seam</groupId>
 	<artifactId>jboss-seam-parent</artifactId>
 	<name>Seam Parent</name>
-	<version>2.3.29-SNAPSHOT</version>
+	<version>2.3.29.ayg</version>
 	<packaging>pom</packaging>
 
 	<licenses>
@@ -64,7 +64,7 @@
 		<pdf.name>${project.artifactId}.pdf</pdf.name>
 
 		<!-- Version string properties -->
-        <version.seam>2.3.29-SNAPSHOT</version.seam>
+        <version.seam>2.3.29.ayg</version.seam>
 		<version.jbossas7>7.2.0.Final</version.jbossas7>
 		<version.wildfly>10.1.0.Final</version.wildfly>
 		<version.emma>2.0.5312</version.emma>
@@ -102,7 +102,7 @@
         <version.pmd>6.32.0</version.pmd>
         <version.jacoco-maven-plugin>0.8.6</version.jacoco-maven-plugin>
         <version.maven-checkstyle-plugin>3.1.1</version.maven-checkstyle-plugin>
-        <version.org.owasp.dependency-check-maven>6.0.3</version.org.owasp.dependency-check-maven>
+        <version.org.owasp.dependency-check-maven>9.0.8</version.org.owasp.dependency-check-maven>
 	
 		
 
