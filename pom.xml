@@ -70,7 +70,7 @@
 		<version.emma>2.0.5312</version.emma>
 		<version.jsf.impl>2.2.20</version.jsf.impl>
 		<version.richfaces.cdk>4.6.1.ayg</version.richfaces.cdk>
-		<version.richfaces>4.6.20.ayg</version.richfaces>
+		<version.richfaces>4.6.21.ayg</version.richfaces>
 		
 		<!-- Versions of Arquillian and Shrinkwrap -->
         <version.org.jboss.arquillian>1.1.11.Final</version.org.jboss.arquillian>
