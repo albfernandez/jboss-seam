@@ -4,7 +4,8 @@ JBoss Seam Changelog
 Release Notes - Seam 2 - Unreleased
 
    * [   ] Bump Richfaces from 4.6.20.ayg to 4.6.21.ayg
-
+   * [   ] Bump Spring from 5.3.29 to 5.3.32
+   
 Relase Notes - Seam 2 - Version 2.3.29.ayg 2023-01-15
 
    * [   ] Optimize startup time skipping some unnecessary reads
