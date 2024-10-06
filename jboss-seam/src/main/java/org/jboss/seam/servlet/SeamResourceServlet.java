@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.jboss.seam.Component;
 import org.jboss.seam.contexts.Lifecycle;
 import org.jboss.seam.core.Init;
+import org.jboss.seam.util.Strings;
 import org.jboss.seam.web.AbstractResource;
 
 /**
@@ -65,7 +66,7 @@ public class SeamResourceServlet extends HttpServlet {
 		String prefix = request.getContextPath() + request.getServletPath();
 
 		if (request.getRequestURI().startsWith(prefix)) {
-			String path = request.getRequestURI().replaceFirst(prefix, "");
+			String path = Strings.removeStart(request.getRequestURI(), prefix);
 			int index = path.indexOf('/', 1);
 			if (index != -1) {
 				path = path.substring(0, index);

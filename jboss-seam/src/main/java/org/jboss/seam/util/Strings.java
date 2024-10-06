@@ -153,5 +153,19 @@ public class Strings {
 		}
 		return out.toString();
 	}
+	
+	public static String removeStart(String source, String start) {
+		if (source == null) {
+			return "";
+		}
+		if (start == null || start.length() == 0) {
+			return source;
+		}
+		if (source.startsWith(start)) {
+			int index = start.length();
+			return source.substring(index);
+		}
+		return source;
+	}
 
 }
