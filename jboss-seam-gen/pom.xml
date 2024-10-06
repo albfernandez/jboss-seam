@@ -172,12 +172,12 @@
 	<dependency>
 		<groupId>org.primefaces</groupId>
 		<artifactId>primefaces</artifactId>
-		<version>13.0.4</version>
+		<version>14.0.5</version>
 	</dependency>
 	<dependency>
 		<groupId>org.primefaces.extensions</groupId>
 		<artifactId>primefaces-extensions</artifactId>
-		<version>13.0.4</version>
+		<version>14.0.5</version>
 	</dependency>
 	
       
