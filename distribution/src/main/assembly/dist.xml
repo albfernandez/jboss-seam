@@ -145,10 +145,6 @@
             <include>com.github.librepdf:openrtf</include>
             <include>org.primefaces:primefaces</include>
             <include>org.primefaces.extensions:primefaces-extensions</include>
-            <include>org.primefaces.extensions:resources-ckeditor</include>
-            <include>org.primefaces.themes:bluesky</include>
-            <include>org.primefaces.themes:bootstrap</include>
-            <include>org.primefaces.themes:south-street</include>
             <include>net.sourceforge.cssparser:cssparser</include>
             <include>org.w3c.css:sac</include>
             <include>com.google.guava:guava</include>

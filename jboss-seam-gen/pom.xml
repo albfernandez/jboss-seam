@@ -180,21 +180,6 @@
 		<version>13.0.4</version>
 	</dependency>
 	
-	<dependency>
-		<groupId>org.primefaces.themes</groupId>
-		<artifactId>bootstrap</artifactId>
-		<version>1.0.10</version>
-	</dependency>
-	<dependency>
-		<groupId>org.primefaces.themes</groupId>
-		<artifactId>bluesky</artifactId>
-		<version>1.0.10</version>
-	</dependency>
-	<dependency>
-		<groupId>org.primefaces.themes</groupId>
-		<artifactId>south-street</artifactId>
-		<version>1.0.10</version>
-	</dependency>
       
       <dependency>
          <groupId>org.eclipse.core</groupId>
