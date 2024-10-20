@@ -33,6 +33,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 
+import com.google.common.base.Function;
 import com.google.common.base.Predicate;
 
 /**
@@ -113,8 +114,8 @@ public class BookingFunctionalTestBase extends SeamGrapheneTest {
             clickAndWaitAjax(getBy("SEARCH_SUBMIT"));
         }
         waitModel(browser).until().element(getBy("SPINNER")).is().not().visible();// ugly
-        waitModel(browser).until(new Predicate<WebDriver>() {
-            public boolean apply(WebDriver input) {
+        waitModel(browser).until(new Function<WebDriver, Boolean>() {
+            public Boolean apply(WebDriver input) {
                 return isElementPresent(getBy("SEARCH_RESULT_TABLE")) || isElementPresent(getBy("NO_HOTELS_FOUND"));
             }
         });

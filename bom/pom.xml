@@ -90,7 +90,7 @@
 
 		<!-- Versions of Arquillian and Shrinkwrap -->
 		<version.org.jboss.arquillian>1.1.11.Final</version.org.jboss.arquillian>
-		<version.org.jboss.arquillian.graphene>2.1.0.Final</version.org.jboss.arquillian.graphene>
+		<version.org.jboss.arquillian.graphene>2.5.4</version.org.jboss.arquillian.graphene>
 		<version.org.jboss.as.arquillian.container>7.2.0.Final</version.org.jboss.as.arquillian.container>
 		<version.org.jboss.arquillian.selenium>2.53.1</version.org.jboss.arquillian.selenium>
 		<version.org.jboss.arquillian.extension.drone>2.0.1.Final</version.org.jboss.arquillian.extension.drone>
