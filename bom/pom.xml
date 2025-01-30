@@ -1045,7 +1045,7 @@
 			<dependency>
 				<groupId>org.dbunit</groupId>
 				<artifactId>dbunit</artifactId>
-				<version>2.7.3</version>
+				<version>3.0.0</version>
 				<exclusions>
 					<exclusion>
 						<groupId>junit</groupId>
