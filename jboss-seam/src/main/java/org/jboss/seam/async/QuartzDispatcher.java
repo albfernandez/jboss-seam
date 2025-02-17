@@ -173,11 +173,11 @@ public class QuartzDispatcher extends AbstractDispatcher<QuartzTriggerHandle, Sc
 				scheduler.scheduleJob(jobDetail, trigger);
 			} else {
 				if (schedule.getExpiration() != null) {
-					Trigger trigger = TriggerBuilder.newTrigger().withIdentity(triggerName).endAt(schedule.getExpiration()).build();
+					Trigger trigger = TriggerBuilder.newTrigger().withIdentity(triggerName).startAt(schedule.getExpiration()).build();
 					scheduler.scheduleJob(jobDetail, trigger);
 
 				} else if (schedule.getDuration() != null) {
-					Trigger trigger = TriggerBuilder.newTrigger().withIdentity(triggerName).endAt(calculateDelayedDate(schedule.getDuration())).build();
+					Trigger trigger = TriggerBuilder.newTrigger().withIdentity(triggerName).startAt(calculateDelayedDate(schedule.getDuration())).build();
 					scheduler.scheduleJob(jobDetail, trigger);
 
 				} else {
