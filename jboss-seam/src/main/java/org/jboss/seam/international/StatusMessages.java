@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Vector;
 
 import javax.validation.ConstraintViolation;
 
@@ -331,7 +332,7 @@ public abstract class StatusMessages implements Serializable {
 
 	private List<Runnable> getTasks() {
 		if (tasks == null) {
-			tasks = new ArrayList<Runnable>();
+			tasks = new Vector<Runnable>();
 		}
 		return tasks;
 	}
@@ -354,9 +355,7 @@ public abstract class StatusMessages implements Serializable {
 
 	protected void doRunTasks() {
 		if (tasks != null) {
-			for (Runnable task : tasks) {
-				task.run();
-			}
+			tasks.forEach(task -> task.run());
 			tasks.clear();
 		}
 	}
