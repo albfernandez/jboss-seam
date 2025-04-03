@@ -99,7 +99,7 @@
         <version.findsecbugs-plugin>1.11.0</version.findsecbugs-plugin>
         <version.sb-contrib>7.4.7</version.sb-contrib>
         <version.maven-pmd-plugin>3.14.0</version.maven-pmd-plugin>
-        <version.pmd>6.32.0</version.pmd>
+        <version.pmd>7.10.0</version.pmd>
         <version.jacoco-maven-plugin>0.8.6</version.jacoco-maven-plugin>
         <version.maven-checkstyle-plugin>3.1.1</version.maven-checkstyle-plugin>
         <version.org.owasp.dependency-check-maven>9.0.8</version.org.owasp.dependency-check-maven>
