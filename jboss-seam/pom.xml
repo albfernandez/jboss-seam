@@ -124,7 +124,7 @@
 				<configuration>
 					<archive>
 						<manifestEntries>
-							<Automatic-Module-Name>com.github.albfernandez.javadbf</Automatic-Module-Name>
+							<Automatic-Module-Name>com.github.albfernandez.seam.seam</Automatic-Module-Name>
 						</manifestEntries>
 						<manifest>
 							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
