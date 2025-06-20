@@ -419,11 +419,6 @@
             <scope>runtime</scope>
         </dependency>
 
-        <dependency>
-            <groupId>concurrent</groupId>
-            <artifactId>concurrent</artifactId>
-            <optional>true</optional>
-        </dependency>
 
         <dependency>
             <groupId>org.openid4java</groupId>
