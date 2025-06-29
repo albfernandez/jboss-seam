@@ -36,7 +36,6 @@ import org.hibernate.LockMode;
 import org.hibernate.LockOptions;
 import org.hibernate.MultiIdentifierLoadAccess;
 import org.hibernate.NaturalIdLoadAccess;
-import org.hibernate.Query;
 import org.hibernate.ReplicationMode;
 import org.hibernate.ScrollMode;
 import org.hibernate.ScrollableResults;
@@ -89,7 +88,6 @@ import org.hibernate.type.descriptor.sql.SqlTypeDescriptor;
  * @author Marek Novotny
  *
  */
-@SuppressWarnings("rawtypes")
 public class HibernateSessionInvocationHandler<Hibernate> implements InvocationHandler, Serializable, EventSource {
 
 	private static final long serialVersionUID = 4954720887288965536L;
@@ -126,8 +124,7 @@ public class HibernateSessionInvocationHandler<Hibernate> implements InvocationH
 			QueryParser qp = new QueryParser(ejbql);
 			Object[] newArgs = args.clone();
 			newArgs[0] = qp.getEjbql();
-			//Query query = (Query) method.invoke(getDelegate(method), newArgs);
-			Query query = (Query) method.invoke(delegate, newArgs);
+			javax.persistence.Query query = (javax.persistence.Query) method.invoke(delegate, newArgs);
 			for (int i = 0; i < qp.getParameterValueBindings().size(); i++) {
 				query.setParameter(QueryParser.getParameterName(i), qp.getParameterValueBindings().get(i).getValue());
 			}
@@ -173,6 +170,7 @@ public class HibernateSessionInvocationHandler<Hibernate> implements InvocationH
 	}
 
 	@Override
+	@Deprecated
 	public long getTimestamp() {
 		return ((SessionImplementor) delegate).getTimestamp();
 	}
@@ -411,20 +409,17 @@ public class HibernateSessionInvocationHandler<Hibernate> implements InvocationH
 	}
 
 	@Override
-	@Deprecated
-	public Object load(Class paramClass, Serializable paramSerializable, LockMode paramLockMode) throws HibernateException {
+	public <T> T load(Class<T> paramClass, Serializable paramSerializable, LockMode paramLockMode) throws HibernateException {
 		return delegate.load(paramClass, paramSerializable, paramLockMode);
 	}
 
 	@Override
-	@Deprecated
 	public Object load(String paramString, Serializable paramSerializable, LockMode paramLockMode) throws HibernateException {
 		return delegate.load(paramString, paramSerializable, paramLockMode);
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
-	public Object load(Class paramClass, Serializable paramSerializable) throws HibernateException {
+	public <T> T load(Class<T> paramClass, Serializable paramSerializable) throws HibernateException {
 		return delegate.load(paramClass, paramSerializable);
 	}
 
@@ -509,13 +504,11 @@ public class HibernateSessionInvocationHandler<Hibernate> implements InvocationH
 	}
 
 	@Override
-	@Deprecated
 	public void lock(Object paramObject, LockMode paramLockMode) throws HibernateException {
 		delegate.lock(paramObject, paramLockMode);
 	}
 
 	@Override
-	@Deprecated
 	public void lock(String paramString, Object paramObject, LockMode paramLockMode) throws HibernateException {
 		delegate.lock(paramString, paramObject, paramLockMode);
 	}
@@ -526,7 +519,6 @@ public class HibernateSessionInvocationHandler<Hibernate> implements InvocationH
 	}
 
 	@Override
-	@Deprecated
 	public void refresh(Object paramObject, LockMode paramLockMode) throws HibernateException {
 		delegate.refresh(paramObject, paramLockMode);
 	}
@@ -547,21 +539,25 @@ public class HibernateSessionInvocationHandler<Hibernate> implements InvocationH
 	}
 
 	@Override
+	@Deprecated
 	public Criteria createCriteria(Class paramClass) {
 		return delegate.createCriteria(paramClass);
 	}
 
 	@Override
+	@Deprecated
 	public Criteria createCriteria(Class paramClass, String paramString) {
 		return delegate.createCriteria(paramClass, paramString);
 	}
 
 	@Override
+	@Deprecated
 	public Criteria createCriteria(String paramString) {
 		return delegate.createCriteria(paramString);
 	}
 
 	@Override
+	@Deprecated
 	public Criteria createCriteria(String paramString1, String paramString2) {
 		return delegate.createCriteria(paramString1, paramString2);
 	}
@@ -570,7 +566,8 @@ public class HibernateSessionInvocationHandler<Hibernate> implements InvocationH
 
 
 	@Override
-	public Query createFilter(Object paramObject, String paramString) throws HibernateException {
+	@Deprecated
+	public org.hibernate.Query createFilter(Object paramObject, String paramString) throws HibernateException {
 		return delegate.createFilter(paramObject, paramString);
 	}
 
@@ -580,13 +577,12 @@ public class HibernateSessionInvocationHandler<Hibernate> implements InvocationH
 	}
 
 	@Override
-	public Object get(Class paramClass, Serializable paramSerializable) throws HibernateException {
+	public <T> T get(Class<T> paramClass, Serializable paramSerializable) throws HibernateException {
 		return delegate.get(paramClass, paramSerializable);
 	}
 
 	@Override
-	@Deprecated
-	public Object get(Class paramClass, Serializable paramSerializable, LockMode paramLockMode) throws HibernateException {
+	public <T> T get(Class<T> paramClass, Serializable paramSerializable, LockMode paramLockMode) throws HibernateException {
 		return delegate.get(paramClass, paramSerializable, paramLockMode);
 	}
 
@@ -596,7 +592,6 @@ public class HibernateSessionInvocationHandler<Hibernate> implements InvocationH
 	}
 
 	@Override
-	@Deprecated
 	public Object get(String paramString, Serializable paramSerializable, LockMode paramLockMode) throws HibernateException {
 		return delegate.get(paramString, paramSerializable, paramLockMode);
 	}
@@ -739,7 +734,7 @@ public class HibernateSessionInvocationHandler<Hibernate> implements InvocationH
 	}
 
 	@Override
-	public Object load(Class theClass, Serializable id, LockOptions lockOptions) throws HibernateException {
+	public <T> T load(Class<T> theClass, Serializable id, LockOptions lockOptions) throws HibernateException {
 		return ((EventSource) delegate).load(theClass, id, lockOptions);
 	}
 
@@ -768,9 +763,8 @@ public class HibernateSessionInvocationHandler<Hibernate> implements InvocationH
 		((EventSource) delegate).refresh(entityName, object, lockOptions);
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
-	public Object get(Class clazz, Serializable id, LockOptions lockOptions) throws HibernateException {
+	public <T> T get(Class<T> clazz, Serializable id, LockOptions lockOptions) throws HibernateException {
 		return ((EventSource) delegate).get(clazz, id, lockOptions);
 	}
 
@@ -800,7 +794,7 @@ public class HibernateSessionInvocationHandler<Hibernate> implements InvocationH
 	}
 
 	@Override
-	public IdentifierLoadAccess byId(Class entityClass) {
+	public <T> IdentifierLoadAccess<T> byId(Class<T> entityClass) {
 		return delegate.byId(entityClass);
 	}
 
@@ -810,7 +804,7 @@ public class HibernateSessionInvocationHandler<Hibernate> implements InvocationH
 	}
 
 	@Override
-	public NaturalIdLoadAccess byNaturalId(Class entityClass) {
+	public <T> NaturalIdLoadAccess<T> byNaturalId(Class<T>  entityClass) {
 		return delegate.byNaturalId(entityClass);
 	}
 
@@ -820,7 +814,7 @@ public class HibernateSessionInvocationHandler<Hibernate> implements InvocationH
 	}
 
 	@Override
-	public SimpleNaturalIdLoadAccess bySimpleNaturalId(Class entityClass) {
+	public <T> SimpleNaturalIdLoadAccess<T> bySimpleNaturalId(Class<T> entityClass) {
 		return delegate.bySimpleNaturalId(entityClass);
 	}
 
@@ -876,6 +870,7 @@ public class HibernateSessionInvocationHandler<Hibernate> implements InvocationH
 
 
 	@Override
+	@Deprecated
 	public boolean isFlushBeforeCompletionEnabled() {
 		return ((SessionImplementor) delegate).isFlushBeforeCompletionEnabled();
 	}
