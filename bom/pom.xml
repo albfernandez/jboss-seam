@@ -67,7 +67,7 @@
 		<version.org.hibernate.javax.persistence>1.0.1.Final</version.org.hibernate.javax.persistence>
 		<version.org.hibernate-jpamodelgen>1.2.0.Final</version.org.hibernate-jpamodelgen>
 
-		<version.jboss-el>1.1.1</version.jboss-el>
+		<version.jboss-el>1.1.3</version.jboss-el>
 
 		<!-- ??? -->
 		<version.wildfly>10.1.0.Final</version.wildfly>
